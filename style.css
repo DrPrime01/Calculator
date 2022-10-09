@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.flex-calc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputs {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 25px;
+  font-size: 20px;
+  color: #427e04;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+.screen {
+  height: 200px;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.row-1 {
+  width: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 13px;
+}
+
+.calculator {
+  height: 615px;
+  width: 312px;
+  margin: 25px 0;
+  background-color: #010101;
+}
+
+hr {
+  margin: 0 5px;
+}
+
+.buttons {
+  height: 415px;
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.buttons > div {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btns {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  background-color: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f4f4f4;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+#delete {
+  border-radius: none;
+  width: 0;
+  height: 0;
+  background-color: none;
+  display: inline-block;
+  margin-right: 0.8em;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+.green-texts {
+  color: #427e04;
+}
+
+#equals {
+  background-color: #427e04;
+}
+
+#clear {
+  color: #f5736e;
+}

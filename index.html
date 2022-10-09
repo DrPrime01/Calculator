@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="flex-calc">
+        <div class="calculator" id="flex-calculator">
+            <div class="screen">
+                <span class="inputs" id="input-1">0</span>
+                <span class="inputs" id="input-2"></span>
+                <div class="icons">
+                    <span class="row-1">
+                        <img src="/calculator images/three-o-clock-clock (1).png" alt="clock">
+                        <img src="/calculator images/ruler (1).png" alt="ruler">
+                        <img src="/calculator images/calculator (1).png" alt="calc">
+                    </span>
+                    <span class="row-2 btns" id="delete"><img src="/calculator images/cancel.png" alt="cancel"></span>
+                </div>
+            </div>
+            <hr>
+            <div class="buttons">
+                <div class="row-5-btn">
+                    <div class="btns" id="clear">C</div>
+                    <div class="btns green-texts operator-id" id="brac">( )</div>
+                    <div class="btns green-texts operator" id="percent">%</div>
+                    <div class="btns green-texts operator" id="divide">/</div>
+                </div>
+                <div class="row-4-btn">
+                    <div class="btns number" id="7-btn">7</div>
+                    <div class="btns number" id="8-btn">8</div>
+                    <div class="btns number" id="9-btn">9</div>
+                    <div class="btns green-texts operator" id="times">x</div>
+                </div>
+                <div class="row-3-btn">
+                    <div class="btns number" id="4-btn">4</div>
+                    <div class="btns number" id="5-btn">5</div>
+                    <div class="btns number" id="6-btn">6</div>
+                    <div class="btns green-texts operator" id="minus">-</div>
+                </div>
+                <div class="row-2-btn">
+                    <div class="btns number" id="1-btn">1</div>
+                    <div class="btns number" id="2-btn">2</div>
+                    <div class="btns number" id="3-btn">3</div>
+                    <div class="btns green-texts operator" id="plus">+</div>
+                </div>
+                <div class="row-1-btn">
+                    <div class="btns operator" id="plus-minus">+/-</div>
+                    <div class="btns number" id="zero">0</div>
+                    <div class="btns" id="point">.</div>
+                    <div class="btns" id="equals">=</div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="calculator.js"></script>
+</body>
+</html>
