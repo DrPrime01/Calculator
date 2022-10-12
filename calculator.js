@@ -50,9 +50,11 @@ btnsArray.forEach((btn) => {
         console.log(arrayOfInputs[0]);
       } else {
         //If multiple number values are clicked, concatenate them, and return them as a single value
-        calculationInput.textContent = displayedValue + btn.textContent;
-        arrayOfInputs[0] = calculationInput.textContent;
-        console.log(arrayOfInputs[0]);
+        
+          calculationInput.textContent = displayedValue + btn.textContent;
+          arrayOfInputs[0] = calculationInput.textContent;
+          console.log(arrayOfInputs[0]);
+        
       }
     }
     // If the clicked button is the cancel btn, delete the displayedValue singly
@@ -76,19 +78,13 @@ btnsArray.forEach((btn) => {
       arrayOfInputs = ["1", "", "1"];
     }
 
-    if (arrayOfInputs[0] !== "0" && btn.classList.contains("operator")) {
+    if (btn.classList.contains("operator")) {
       if (
-        !calculationInput.textContent
-          .split("")
-          .includes("+") &&  !calculationInput.textContent
-          .split("")
-          .includes("-") &&  !calculationInput.textContent
-          .split("")
-          .includes("/") &&  !calculationInput.textContent
-          .split("")
-          .includes("%") &&  !calculationInput.textContent
-          .split("")
-          .includes("x")
+        !calculationInput.textContent.split("").includes("+") &&
+        !calculationInput.textContent.split("").includes("-") &&
+        !calculationInput.textContent.split("").includes("/") &&
+        !calculationInput.textContent.split("").includes("%") &&
+        !calculationInput.textContent.split("").includes("x")
       ) {
         calculationInput.textContent = displayedValue + btn.textContent;
         let newArrayOfInputs = calculationInput.textContent.split("");
@@ -108,36 +104,31 @@ btnsArray.forEach((btn) => {
       arrayOfInputs[1] === "%" ||
       arrayOfInputs[1] === "x"
     ) {
-      console.log(true); //remember to remove it
       let newArrayOfInputs = calculationInput.textContent.split("");
       let indexOfOperator = newArrayOfInputs.findIndex(
-        (arr) => arr === "-" || arr === "+" || arr === "/" || arr === "%" || arr === "x"
+        (arr) =>
+          arr === "-" ||
+          arr === "+" ||
+          arr === "/" ||
+          arr === "%" ||
+          arr === "x"
       );
-      console.log(indexOfOperator); //remember to remove it
+
       let neededIndex = indexOfOperator + 1;
-      console.log(neededIndex); //remember to remove it
       let slicedArray = newArrayOfInputs.slice(neededIndex);
-      console.log(slicedArray); //remember to remove it
       let joinedSlicedArray = slicedArray.join("");
-      console.log(joinedSlicedArray); //remember to remove it
       arrayOfInputs[2] = joinedSlicedArray;
       let arrBeforeOperator = newArrayOfInputs.slice(0, indexOfOperator);
-      console.log(arrBeforeOperator);
       let beforeJoinedArray = arrBeforeOperator.join("");
-      console.log(beforeJoinedArray);
       arrayOfInputs[0] = beforeJoinedArray;
-      console.log(arrayOfInputs);
-      console.log(arrayOfInputs[2]);
-      console.log(arrayOfInputs[0]);
     } else {
-      console.log(arrayOfInputs);
       return calculationInput.textContent;
     }
 
     //Checks if the first value of the arrayOfInputs has been mutated and the user presses "equals to". If true, returns the mutated value of arrayOfInputs.
     if (idAttribute === "equals") {
-        calculate(arrayOfInputs[0], arrayOfInputs[2], arrayOfInputs[1]);
-        calculationInput.textContent = "0";
+      calculate(arrayOfInputs[0], arrayOfInputs[2], arrayOfInputs[1]);
+      calculationInput.textContent = "0";
     }
   });
 });
@@ -146,47 +137,45 @@ function calculate(input1, input2, operator) {
   let calculation;
   switch (operator) {
     case "+":
-        if(input2) {
-            calculation = parseFloat(input1) + parseFloat(input2);
-        } else {
-            calculation = parseFloat(input1) + 0;
-        }
+      if (input2) {
+        calculation = parseFloat(input1) + parseFloat(input2);
+      } else {
+        calculation = parseFloat(input1) + 0;
+      }
       break;
     case "-":
-        if(input2) {
-            calculation = parseFloat(input1) - parseFloat(input2);
-        } else {
-            calculation = parseFloat(input1) - 0;
-        }
+      if (input2) {
+        calculation = parseFloat(input1) - parseFloat(input2);
+      } else {
+        calculation = parseFloat(input1) - 0;
+      }
       break;
     case "/":
-        if(input2) {
-            calculation = parseFloat(input1) / parseFloat(input2);
-        } 
-        if(input2 === "0") {
-            calculation = "Maths Error";
-        } else {
-            calculation = parseFloat(input1) / 1;
-        }
+      if (input2) {
+        calculation = parseFloat(input1) / parseFloat(input2);
+        return calculation;
+      }
+      if (input2 === "0") {
+        calculation = "Maths Error";
+      } else {
+        calculation = parseFloat(input1) / 1;
+      }
       break;
     case "x":
-        if(input2) {
-            calculation = parseFloat(input1) * parseFloat(input2);
-        } else {
-            calculation = parseFloat(input1) * 1;
-        }
+      if (input2) {
+        calculation = parseFloat(input1) * parseFloat(input2);
+      } else {
+        calculation = parseFloat(input1) * 1;
+      }
       break;
-    case "%": 
-        if(input2) {
-            calculation = parseFloat(input1) / 100 * parseFloat(input2);
-        } else {
-            calculation = parseFloat(input1) / 100
-        }
+    case "%":
+      if (input2) {
+        calculation = (parseFloat(input1) / 100) * parseFloat(input2);
+      } else {
+        calculation = parseFloat(input1) / 100;
+      }
       break;
   }
   console.log(calculation);
   resultInput.textContent = calculation.toString();
 }
-
-
-

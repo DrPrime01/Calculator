@@ -14,6 +14,10 @@ body {
   align-items: center;
 }
 
+hr {
+  border: 1px solid #171717;
+}
+
 .inputs {
   height: 50%;
   display: flex;
